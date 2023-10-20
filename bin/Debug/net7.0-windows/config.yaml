@@ -1,0 +1,18 @@
+﻿Ldap:
+  Enabled: true
+  Connection:
+    Host: "ldap://ldap.forumsys.com:389"
+    User: "uid=einstein,dc=example,dc=com"
+    Pass: "password"
+    BaseDn: "dc=example,dc=com"
+    Ssl:
+      Enabled: false
+      Cert: ""
+  Groups:
+    Allowedgroups: "OU=scientists"
+  Auth:
+    Attribute: "uid"
+OpenId:
+  Enabled: false
+Saml:
+  Enabled: false
