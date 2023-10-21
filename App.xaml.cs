@@ -38,8 +38,8 @@ namespace BRTNYKBNCProject
             try
             {
                 return LdapAuthentication.Authenticate(username, password, config.Ldap.Connection.Host,
-                    config.Ldap.Connection.BaseDn, config.Ldap.Auth.Attribute, config.Ldap.Groups.Allowedgroups, config.Ldap.Connection.User,
-                    config.Ldap.Connection.Pass);
+                    config.Ldap.Connection.BaseDn, config.Ldap.Auth.Attribute, config.Ldap.Groups.AllowedGroups, config.Ldap.Connection.User,
+                    config.Ldap.Connection.Pass, config.Ldap.Connection.Ssl);
             }
             catch (Exception ex)
             {

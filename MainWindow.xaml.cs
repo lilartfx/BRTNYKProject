@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,11 +21,18 @@ namespace BRTNYKBNCProject
 
         private void LoginButton_Click(object sender, RoutedEventArgs routedEventArgs)
         {
+            
             DirectoryEntry? directoryEntry = null;
 
+            if (UsernameTextBox.Text == "" || PasswordBox.Password == "")
+            {
+                return;
+            }
+            
             try
             {
-                directoryEntry = App.TryLogin(UsernameTextBox.Text, PasswordBox.Password);
+                var cleanUn = new string(UsernameTextBox.Text.Where(char.IsLetterOrDigit).ToArray());
+                directoryEntry = App.TryLogin(cleanUn, PasswordBox.Password);
             }
             catch (Exception e)
             {
@@ -46,7 +54,10 @@ namespace BRTNYKBNCProject
 
         private void LoginOut_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            UsernameTextBox.Text = "";
+            PasswordBox.Password = "";
+            LoginScreen.Visibility = Visibility.Visible;
+            DataScreen.Visibility = Visibility.Hidden;
         }
     }
 }

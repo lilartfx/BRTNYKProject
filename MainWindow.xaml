@@ -16,12 +16,12 @@
             <Button Content="Login" Width="100" Height="30" Click="LoginButton_Click" />
         </StackPanel>
 
-        <StackPanel Name="DataScreen" VerticalAlignment="Stretch" Margin="5" Visibility="Hidden">
+        <StackPanel Name="DataScreen" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="5" Visibility="Hidden">
             <Border BorderBrush="Black" BorderThickness="2" Background="LightGray">
                 <TextBlock Name="DataBox" FontSize="12"
                            TextAlignment="Left" />
             </Border>
-            <Button Content="Logout" Width="100" Height="30" Click="LoginOut_Click" />
+            <Button Content="Logout" Width="100" Height="30" Margin="0,10,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="LoginOut_Click" />
         </StackPanel>
     </Grid>
 </Window>

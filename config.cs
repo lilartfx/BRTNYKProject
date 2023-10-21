@@ -15,8 +15,8 @@ namespace BRTNYKBNCProject
     {
         public bool Enabled { get; set; }
         public ConnectionConfig Connection { get; set; } = null!;
-        public GroupsConfig Groups { get; set; } = null!;
         public AuthConfig Auth { get; set; } = null!;
+        public GroupConfig Groups { get; set; }
     }
 
     public class ConnectionConfig
@@ -28,15 +28,15 @@ namespace BRTNYKBNCProject
         public SslConfig Ssl { get; set; } = null!;
     }
 
+    public class GroupConfig
+    {
+        public string[] AllowedGroups { get; set; } = null!;
+    }
+
     public class SslConfig
     {
         public bool Enabled { get; set; }
         public string Cert { get; set; } = null!;
-    }
-
-    public class GroupsConfig
-    {
-        public string Allowedgroups { get; set; } = null!;
     }
 
     public class AuthConfig
